@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Profilim"
+        android:layout_marginStart="180dp">
+
+    </TextView>
+    <View
+        android:id="@+id/View03"
+        android:layout_marginTop="22dp"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#000000" />
+    <LinearLayout
+        android:layout_marginTop="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/arkaplanmanevra"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kullanıcı Adı"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"></TextView>
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_yeni"
+                android:text="Profili düzenle"
+                android:textAllCaps="false"
+                android:textStyle="normal" />
+                />
+
+        </LinearLayout>
+
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_marginTop="30dp"
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"></androidx.appcompat.widget.Toolbar>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                app:tabMode="scrollable">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eklediklerim"
+                    android:scrollbarSize="?actionBarSize"/>
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beğendiklerim" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yorumlarım"
+                 />
+            </com.google.android.material.tabs.TabLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

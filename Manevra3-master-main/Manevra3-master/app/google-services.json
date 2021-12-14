@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "229720482223",
+    "firebase_url": "https://manevra-5f2df-default-rtdb.firebaseio.com",
+    "project_id": "manevra-5f2df",
+    "storage_bucket": "manevra-5f2df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229720482223:android:53f73d8d19ccf6ec42cf5a",
+        "android_client_info": {
+          "package_name": "com.example.manevra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229720482223-lvbv51u2bpep98a70h815oei5d7962aa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv1ZPbuMrgn4LeiD-GOxLGHJle-lmkMcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229720482223-lvbv51u2bpep98a70h815oei5d7962aa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

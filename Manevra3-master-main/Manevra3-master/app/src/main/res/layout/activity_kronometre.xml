@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityKronometre">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/anasayfa"
+            android:layout_width="58dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/back">
+        </Button>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="69dp">
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:textSize="50dp" />
+
+        <Button
+            android:layout_width="198dp"
+            android:layout_height="167dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/start"
+            android:onClick="startChronometer"
+            android:text="Start"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:layout_width="177dp"
+            android:layout_height="139dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/pause"
+            android:onClick="pauseChronometer"
+            android:text="Pause"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="118dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/reset"
+            android:onClick="resetChronometer"
+            android:text="Reset"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

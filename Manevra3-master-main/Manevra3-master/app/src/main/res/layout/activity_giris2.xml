@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ActivityGiris"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/girisMail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/white"
+        android:drawableRight="@drawable/ic_baseline_person_24"
+        android:ems="10"
+        android:hint="E Mail : "
+        android:inputType="textPersonName"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/girisSifre"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Password"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:drawableRight="@drawable/ic_baseline_info_24"/>
+
+    <Button
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_background2"
+        android:id="@+id/btn_uyeGirisi"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Üye Girişi" />
+
+
+
+</LinearLayout>
+
