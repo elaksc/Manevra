@@ -48,7 +48,7 @@ public class ActivityFavori extends AppCompatActivity {
                     if (snapshot.exists()) {
                         if (snapshot.hasChildren()) {
                             liste.clear();
-                           
+
                             Collections.reverse(liste);
                             recyclerViewRun(liste);
                         }

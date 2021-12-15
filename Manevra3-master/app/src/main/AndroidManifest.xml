@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Manevra">
         <activity
+            android:name=".ActivityComments"
+            android:exported="false" />
+        <activity
             android:name=".ActivityFavori"
             android:exported="false" />
         <activity
