@@ -8,19 +8,19 @@ import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class ActivityKronometre extends AppCompatActivity {
     private Chronometer chronometer;
     private long pauseOffset;
     private boolean running;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kronometre);
         chronometer = findViewById(R.id.chronometer);
-        Button btnanasayfa=(Button)findViewById(R.id.anasayfa);
+        ImageButton btnanasayfa=(ImageButton) findViewById(R.id.backBtn);
         btnanasayfa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

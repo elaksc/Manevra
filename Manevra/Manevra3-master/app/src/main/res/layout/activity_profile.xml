@@ -8,9 +8,9 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="150dp"
         android:layout_marginTop="35dp"
-        android:background="@drawable/background" />
+        android:background="@drawable/logo3" />
 
     <!--Toolbar-->
 
@@ -21,13 +21,12 @@
         android:background="@color/purple_500">
 
         <ImageButton
-            android:id="@+id/backBtn"
+            android:id="@+id/geributon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:background="@color/purple_500"
-            android:backgroundTint="@color/white"
             android:src="@drawable/ic_baseline_arrow_back_24" />
 
         <ImageButton
@@ -57,7 +56,7 @@
         android:layout_marginTop="120dp"
         android:background="@color/white"
         android:src="@drawable/ic_baseline_person_24"
-        app:shapeAppearance="@style/styleRounderCornersImage"/>
+        app:shapeAppearance="@style/styleRounderCornersImage" />
 
     <TextView
         android:id="@+id/nameTv"
@@ -69,7 +68,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/emailTv"
@@ -137,6 +136,7 @@
         android:layout_width="match_parent"
         android:layout_height="411dp"
         android:layout_below="@+id/cizgi"
+        android:layout_marginTop="-13dp"
         android:orientation="vertical">
 
 

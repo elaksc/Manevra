@@ -6,6 +6,7 @@ import android.widget.ImageView;
 public class Kullanici {
     private String id;
     private String kullaniciAdi;
+    private String Sifre;
     private String ad;
     private ImageView resimUri;
 
@@ -13,9 +14,18 @@ public class Kullanici {
 
     }
 
-    public Kullanici(String id, String kullaniciAdi, String ad, ImageView resimUri) {
+    public String getSifre() {
+        return Sifre;
+    }
+
+    public void setSifre(String sifre) {
+        Sifre = sifre;
+    }
+
+    public Kullanici(String id, String kullaniciAdi, String sifre, String ad, ImageView resimUri) {
         this.id = id;
         this.kullaniciAdi = kullaniciAdi;
+        Sifre = sifre;
         this.ad = ad;
         this.resimUri = resimUri;
     }

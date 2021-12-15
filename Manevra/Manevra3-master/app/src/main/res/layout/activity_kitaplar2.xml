@@ -29,7 +29,8 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    >
 
                     <ImageView
                         android:id="@+id/close_kitap"
@@ -55,38 +56,40 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:layout_margin="35dp"
+
+        >
 
         <ImageView
-            android:layout_marginTop="35dp"
             android:id="@+id/eklenenKitapResmi"
-            android:scaleType="centerInside"
-            android:layout_gravity="center"
             android:layout_width="287dp"
             android:layout_height="222dp"
-            android:src="@drawable/ic_baseline_add_photo_alternate_24"
-            android:layout_marginBottom="100dp"/>
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="100dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_baseline_add_photo_alternate_24" />
+
         <EditText
             android:id="@+id/kitapAdi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Kitap Adını Giriniz"
-            />
+            android:hint="Kitap Adını Giriniz" />
+
         <EditText
             android:id="@+id/kitapYazari"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Kitap Yazarını Giriniz"
-            />
+            android:hint="Kitap Yazarını Giriniz" />
+
         <EditText
             android:id="@+id/kitapHakkinda"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Kitap Hakkında"
-            />
+            android:hint="Kitap Hakkında" />
 
     </LinearLayout>
 

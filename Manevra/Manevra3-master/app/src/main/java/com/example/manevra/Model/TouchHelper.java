@@ -36,8 +36,8 @@ public class TouchHelper  extends ItemTouchHelper.SimpleCallback {
         final int position=viewHolder.getAdapterPosition();
         if (direction == ItemTouchHelper.RIGHT){
             AlertDialog.Builder builder=new AlertDialog.Builder(adapter.getContext());
-            builder.setMessage("Emin Misiniz?")
-                    .setTitle("Silindi.")
+            builder
+                    .setTitle("Silmek İstediğinize Emin Misiniz?")
                     .setPositiveButton("Evet", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {

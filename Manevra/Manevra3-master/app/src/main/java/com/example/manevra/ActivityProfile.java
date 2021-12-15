@@ -15,11 +15,11 @@ public class ActivityProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        backBtn=findViewById(R.id.editbtn);
+        backBtn=findViewById(R.id.geributon);
         backBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent ıntent=new Intent(ActivityProfile.this,ActivityProfile.class);
+                Intent ıntent=new Intent(ActivityProfile.this,ActivityAnasayfa.class);
                 startActivity(ıntent);
             }
         });

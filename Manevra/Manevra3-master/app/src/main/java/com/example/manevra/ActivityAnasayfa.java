@@ -36,8 +36,6 @@ public class ActivityAnasayfa extends AppCompatActivity {
 
     FloatingActionButton btn;
     DrawerLayout cekmece;
-
-
     FirebaseDatabase database;
     private DatabaseReference kitapYukleRef;
     private ValueEventListener kitapYukleRefListener;
@@ -138,6 +136,8 @@ public class ActivityAnasayfa extends AppCompatActivity {
     }
 
     public void LogoyaTiklama(View view) {
+        Intent intent = new Intent(ActivityAnasayfa.this, ActivityProfile.class);
+        startActivity(intent);
         cekmeceyiKapat(cekmece);
     }
 
@@ -166,7 +166,8 @@ public class ActivityAnasayfa extends AppCompatActivity {
     }
 
     public void ProfilimTiklama(View view) {
-        //Favori sayfası
+        Intent intent = new Intent(ActivityAnasayfa.this, ActivityProfile.class);
+        startActivity(intent);
     }
 
     public void CikisTiklama(View view) {
