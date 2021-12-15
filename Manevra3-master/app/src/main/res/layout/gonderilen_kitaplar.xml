@@ -52,7 +52,16 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="30dp"
-                android:src="@mipmap/ic_begeni" />
+                android:src="@mipmap/ic_begeni"
+                android:visibility="visible"
+                />
+            <ImageView
+                android:id="@+id/begeni_GonderiOgesiDolu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_baseline_favorite_24"
+                android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/yorum_GonderiOgesi"

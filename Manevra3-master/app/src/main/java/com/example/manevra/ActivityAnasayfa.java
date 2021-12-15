@@ -15,12 +15,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.manevra.Adapter.GonderilenKitapAdapter;
 import com.example.manevra.Model.GonderilenKitap;
 import com.example.manevra.Model.ToDoModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,13 +41,14 @@ public class ActivityAnasayfa extends AppCompatActivity {
     FloatingActionButton btn;
     DrawerLayout cekmece;
     FirebaseDatabase database;
-    private DatabaseReference kitapYukleRef;
+    private DatabaseReference kitapYukleRef,likereference;
     private ValueEventListener kitapYukleRefListener;
     private DatabaseReference dbref;
-
+    ImageView begeni,dolubegeni;
     private RecyclerView recyclerView;
     GonderilenKitapAdapter recyclerAdapter;
     List<GonderilenKitap> liste = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +57,6 @@ public class ActivityAnasayfa extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         cekmece = findViewById(R.id.cekmece_arkaplan);
         Button btnSearch = (Button) findViewById(R.id.btnsearch);
-
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +64,8 @@ public class ActivityAnasayfa extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        likereference=FirebaseDatabase.getInstance().getReference("likes");
+
         btn = (FloatingActionButton) findViewById(R.id.ekleme);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +84,7 @@ public class ActivityAnasayfa extends AppCompatActivity {
         getUserData();
 
     }
+
 
     private void getUserData() {
 
@@ -110,22 +117,20 @@ public class ActivityAnasayfa extends AppCompatActivity {
             }
         });
     }
-
     private void recyclerViewRun(List<GonderilenKitap> liste) {
         recyclerAdapter = new GonderilenKitapAdapter(liste, this);
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerAdapter.setOnItemClickListener(new GonderilenKitapAdapter.OnItemClickListener() {
+     /*     recyclerAdapter.setOnItemClickListener(new GonderilenKitapAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Toast.makeText(getApplicationContext(), "Position ~> " + position, Toast.LENGTH_SHORT).show();
-            /*    Intent gecis = new Intent(AdminPanelActivity.this, LoginActivity.class);
+              Intent gecis = new Intent(AdminPanelActivity.this, LoginActivity.class);
                 startActivity(gecis);
              */
             }
-        });
 
-    }
+
 
     public void MenuyeTiklama(View view) {
         cekmeceyiac(cekmece);
@@ -152,7 +157,8 @@ public class ActivityAnasayfa extends AppCompatActivity {
     }
 
     public void FavorilerimTiklama(View view) {
-        //Favori sayfası
+        Intent intent = new Intent(ActivityAnasayfa.this, ActivityFavori.class);
+        startActivity(intent);
     }
 
     public void KronometreTiklama(View view) {

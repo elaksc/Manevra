@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.3828125" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/drawable/ic_begeni_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/drawable/ic_begeni_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/drawable/ic_kullanici_background.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/activity_anasayfa2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/activity_edit_profile.xml" value="0.3625" />
+        <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/activity_favori.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/activity_kitaplar2.xml" value="0.3625" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/activity_kronometre.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/activity_profile.xml" value="0.3625" />
@@ -14,6 +18,7 @@
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/add_new_task.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/each_task.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/gonderilen_kitaplar.xml" value="0.5" />
+        <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/kullanici_ogesi.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/main_toolbar.xml" value="0.3625" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/layout/menu_yonlendirme_cekmecesi.xml" value="0.3625" />
         <entry key="..\:/Users/lenovo/Downloads/Manevra/Manevra3-master/app/src/main/res/mipmap-anydpi-v26/ic_kullanici_round.xml" value="0.37864583333333335" />
