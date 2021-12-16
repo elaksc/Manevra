@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilResmiGonderiOgesi"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_kullanici_foreground" />
+
+            <TextView
+                android:id="@+id/txtKullaniciAdi_GonderiOgesi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Kullanıcı Adı"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/KitapResmi_GonderiOgesi"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/logo" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/begeni_GonderiOgesi"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@mipmap/ic_begeni"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/begeni_GonderiOgesiDolu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/ic_baseline_favorite_24"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/yorum_GonderiOgesi"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/begeni_GonderiOgesi"
+                android:src="@drawable/ic_baseline_chat_bubble_outline_24" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_begeniler_GonderiOgesi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="10 favori"
+            android:textColor="@color/design_default_color_on_background"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_gonderen_GonderiOgesi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Eliyy"
+            android:textColor="@color/design_default_color_on_background"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_kitapHakkinda_GonderiOgesi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="kitap hakkında"
+            android:textColor="@color/design_default_color_on_background"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/txt_yorumlar_GonderiOgesi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="yorumları gör"
+            android:textColor="@color/Accent"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
