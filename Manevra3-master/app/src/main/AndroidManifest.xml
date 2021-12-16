@@ -7,12 +7,15 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@drawable/logo"
         android:label="Manevra"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Manevra">
+        android:theme="@style/Theme.Manevra"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ActivitySearch"
+            android:exported="false" />
         <activity
             android:name=".ActivityComments"
             android:exported="false" />
