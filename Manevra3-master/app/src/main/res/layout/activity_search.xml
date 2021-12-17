@@ -19,11 +19,11 @@
         android:drawableLeft="@drawable/ic_baseline_search_24"
         android:padding="10dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/listData"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/txtSearch">
 
-    </androidx.recyclerview.widget.RecyclerView>
+    </ListView>
 </RelativeLayout>
