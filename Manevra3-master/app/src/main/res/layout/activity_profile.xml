@@ -16,8 +16,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageProfileEditProfile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:layout_marginTop="50dp"
@@ -31,8 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Fotoğraf Yükle"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textColor="@color/purple_500"
+            android:textSize="18sp" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/mailEdit"
@@ -41,48 +41,168 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"
             android:hint="Kullanıcı adı"
             app:met_floatingLabel="normal" />
 
-        <RelativeLayout
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/passwordEdit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Email"
+            app:met_floatingLabel="normal" />
 
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/passwordEdit"
-                android:layout_width="match_parent"
+        <GridLayout
+            android:columnOrderPreserved="false"
+            android:alignmentMode="alignMargins"
+            android:layout_marginTop="5dp"
+            android:rowCount="1"
+            android:columnCount="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:hint="Şifre"
-                app:met_floatingLabel="normal" />
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:elevation="60dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            <TextView
-                android:id="@+id/saveEditProfile"
-                android:layout_width="119dp"
+                    <ImageView
+                        android:id="@+id/editBtnn"
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:clickable="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Düzenle"
+                        android:textColor="@color/purple_500"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/passwordEdit"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="141dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="132dp"
-                android:background="@color/white"
-                android:text="Güncelle"
-                android:textAlignment="center"
-                android:textColor="@color/purple_500"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:elevation="60dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/saveEditProfile"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape_rec02" />
-        </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/editfavori"
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_favorite_24"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/purple_500"
+                        android:text="Favoriler"
+                        android:textSize="20sp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/car2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:elevation="60dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/edittodo"
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_playlist_add_check_24"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/purple_500"
+                        android:text="To Do List"
+                        android:textSize="20sp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ard2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:elevation="60dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/editexit"
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_exit_to_app_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Çıkış"
+                        android:textColor="@color/purple_500"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+
     </LinearLayout>
 
     <RelativeLayout
@@ -111,6 +231,4 @@
             android:src="@drawable/ic_baseline_edit_24" />
 
     </RelativeLayout>
-
-
 </RelativeLayout>

@@ -10,17 +10,20 @@
     <AutoCompleteTextView
         android:id="@+id/txtSearch"
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/purple_500"
         android:drawableLeft="@drawable/ic_baseline_search_24"
-        android:padding="10dp"
-        android:layout_height="60dp"/>
+        android:padding="10dp" />
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listData"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/txtSearch">
 
-    </ListView>
+    </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>

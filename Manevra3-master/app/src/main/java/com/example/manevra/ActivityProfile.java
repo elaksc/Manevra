@@ -1,7 +1,9 @@
 package com.example.manevra;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -12,6 +14,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.imageview.ShapeableImageView;
@@ -24,11 +27,62 @@ public class ActivityProfile extends AppCompatActivity {
 
     ImageButton backBtn;
     ImageButton editbtn;
+    ImageView editBtnn;
     ShapeableImageView profil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        editBtnn=findViewById(R.id.editBtnn);
+        editBtnn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ıntent=new Intent(ActivityProfile.this,ActivityEditProfile.class);
+                startActivity(ıntent);
+            }
+        });
+        ImageView edittodo=findViewById(R.id.edittodo);
+        edittodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ıntent=new Intent(ActivityProfile.this,ToDoListActivity.class);
+                startActivity(ıntent);
+            }
+        });
+        ImageView editfavori=findViewById(R.id.editfavori);
+        editfavori.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ıntent=new Intent(ActivityProfile.this,ActivityFavori.class);
+                startActivity(ıntent);
+            }
+        });
+        ImageView editexit=findViewById(R.id.editexit);
+        editexit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder uyariPenceresi = new AlertDialog.Builder(ActivityProfile.this);
+                uyariPenceresi.setTitle("Çıkış");
+                uyariPenceresi.setMessage("Çıkış Yapılsın Mı?");
+                uyariPenceresi.setPositiveButton("EVET", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finishAffinity();
+                        Intent intent = new Intent(ActivityProfile.this, ActivityMain.class);
+                        startActivity(intent);
+                    }
+                });
+                uyariPenceresi.setNegativeButton("HAYIR", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                uyariPenceresi.show();
+            }
+        });
+
         backBtn=findViewById(R.id.geributon);
         backBtn.setOnClickListener(new View.OnClickListener(){
             @Override
