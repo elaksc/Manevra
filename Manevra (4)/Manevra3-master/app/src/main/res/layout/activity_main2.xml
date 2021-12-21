@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
-    android:layout_height="fill_parent"  tools:context=".ActivityMain"  android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityMain">
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -11,26 +15,29 @@
         app:srcCompat="@drawable/logo" />
 
     <Button
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_background1"
         android:id="@+id/uyegirisi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="25dp"
-        android:text="Üye Girişi" />
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_background1"
+        android:enabled="false"
+        android:text="Üye Girişi"
+        android:textColor="@color/black" />
 
     <Button
+        android:id="@+id/uyeolma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/btn_background2"
-        android:id="@+id/uyeolma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Üye Ol" />
+        android:enabled="false"
+        android:text="Üye Ol"
+        android:textColor="@color/black" />
 
     />
 

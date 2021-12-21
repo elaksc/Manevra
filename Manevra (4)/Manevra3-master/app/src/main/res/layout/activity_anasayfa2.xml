@@ -7,33 +7,33 @@
 
 
     <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/cekmece_arkaplan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cekmece_arkaplan"
         tools:context=".ActivityAnasayfa">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <include
-                layout="@layout/main_toolbar"/>
+
+            <include layout="@layout/main_toolbar" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/kitapList"
-                tools:listitem="@layout/gonderilen_kitaplar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/gonderilen_kitaplar" />
 
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="300dp"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:layout_gravity="start">
+            android:layout_gravity="start"
+            android:background="@color/white">
 
-            <include
-                layout="@layout/menu_yonlendirme_cekmecesi"/>
+            <include layout="@layout/menu_yonlendirme_cekmecesi" />
 
         </RelativeLayout>
     </androidx.drawerlayout.widget.DrawerLayout>
@@ -42,22 +42,22 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
 
-        android:layout_height="0dp"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:toolbarId="@+id/toolbar"
+            app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
 
-            app:contentScrim="?attr/colorPrimary">
+            app:toolbarId="@+id/toolbar">
 
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_width="match_parent"></androidx.appcompat.widget.Toolbar>
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -66,19 +66,24 @@
         android:layout_height="match_parent"
 
 
->
+        >
 
     </androidx.core.widget.NestedScrollView>
 
 
-
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ekleme"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:src="@android:drawable/ic_input_add"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="16dp" />"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add" />"
+
+    <View
+        android:id="@+id/stealFocus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

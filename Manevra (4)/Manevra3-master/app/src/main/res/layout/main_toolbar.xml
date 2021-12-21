@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/Menu"
+        android:layout_width="38dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:onClick="MenuyeTiklama"
+        android:src="@drawable/ic_baseline_menu_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/searchbox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/search_background"
+        android:elevation="8dp"
+        android:hint="Search"
+        android:inputType="text"
+        android:outlineAmbientShadowColor="#AA00FF"
+        android:outlineSpotShadowColor="#CBAA00FF"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:shadowColor="#AA00FF"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Menu"
+        app:layout_constraintEnd_toStartOf="@+id/btnsearch"
+        app:layout_constraintStart_toEndOf="@+id/Menu"
+        app:layout_constraintTop_toTopOf="@+id/Menu" />
+
+    <ImageView
+        android:id="@+id/btnsearch"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/search_background"
+        android:elevation="10dp"
+        android:outlineSpotShadowColor="#AA00FF"
+        android:padding="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@+id/searchbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchbox" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

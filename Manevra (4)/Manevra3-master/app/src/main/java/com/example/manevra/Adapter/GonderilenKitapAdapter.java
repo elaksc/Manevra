@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.manevra.Model.GonderilenKitap;
 import com.example.manevra.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,19 +22,25 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GonderilenKitapAdapter extends RecyclerView.Adapter<GonderilenKitapAdapter.ViewHolder> {
     private List<GonderilenKitap> liste;
     DatabaseReference likereference;
     Context mContext;
-    Boolean testclick=false;
+    Boolean testclick = false;
     private FirebaseUser firebaseUser;
     private GonderilenKitapAdapter.OnItemClickListener mListener;
 
     public GonderilenKitapAdapter(List<GonderilenKitap> liste, Context mContext) {
         this.liste = liste;
         this.mContext = mContext;
+    }
+
+    public void setCacheMenuRes(List<GonderilenKitap>  dataList) {
+        this.liste = dataList;
+        notifyDataSetChanged();
     }
 
     public interface OnItemClickListener {
@@ -62,6 +69,7 @@ public class GonderilenKitapAdapter extends RecyclerView.Adapter<GonderilenKitap
         return new ViewHolder(itemView, mListener);
 
     }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         GonderilenKitap gonderilenKitap = liste.get(position);
@@ -70,31 +78,27 @@ public class GonderilenKitapAdapter extends RecyclerView.Adapter<GonderilenKitap
         holder.txtgonderen.setText(liste.get(position).getKitapAdi());
         Picasso.get().load(liste.get(position).getKitapGorseli()).into(holder.gonderiResmi);
 
-        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
-        final String userid=firebaseUser.getUid();
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        final String userid = firebaseUser.getUid();
         final String kitapid = gonderilenKitap.getKitapID();
 
-        holder.getlikebuttonstatus(kitapid,userid);
+        holder.getlikebuttonstatus(kitapid, userid);
 
         holder.begeniResmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                testclick=true;
+                testclick = true;
 
                 likereference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(testclick==true)
-                        {
-                            if(snapshot.child(kitapid).hasChild(userid))
-                            {
+                        if (testclick == true) {
+                            if (snapshot.child(kitapid).hasChild(userid)) {
                                 likereference.child(kitapid).child(userid).removeValue();
-                                testclick=false;
-                            }
-                            else
-                            {
+                                testclick = false;
+                            } else {
                                 likereference.child(kitapid).child(userid).setValue(true);
-                                testclick=false;
+                                testclick = false;
                             }
 
                         }
@@ -111,13 +115,12 @@ public class GonderilenKitapAdapter extends RecyclerView.Adapter<GonderilenKitap
         });
 
 
-
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
 
-        public ImageView profilResmi, gonderiResmi, begeniResmi,begeniResmi2, yorumResmi;
+        public ImageView profilResmi, gonderiResmi, begeniResmi, begeniResmi2, yorumResmi;
         public TextView txtkullaniciAdi, txtfavori,
                 txtgonderen, txtkitapHakkindaYazi, txtyorumlari;
 
@@ -147,22 +150,19 @@ public class GonderilenKitapAdapter extends RecyclerView.Adapter<GonderilenKitap
             });
 
         }
-        public void getlikebuttonstatus(final String postkey, final String userid)
-        {
-            likereference= FirebaseDatabase.getInstance().getReference("likes");
+
+        public void getlikebuttonstatus(final String postkey, final String userid) {
+            likereference = FirebaseDatabase.getInstance().getReference("likes");
             likereference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.child(postkey).hasChild(userid))
-                    {
-                        int likecount=(int)snapshot.child(postkey).getChildrenCount();
-                        txtfavori.setText(likecount+" likes");
+                    if (snapshot.child(postkey).hasChild(userid)) {
+                        int likecount = (int) snapshot.child(postkey).getChildrenCount();
+                        txtfavori.setText(likecount + " likes");
                         begeniResmi.setImageResource(R.drawable.ic_baseline_favorite_24);
-                    }
-                    else
-                    {
-                        int likecount=(int)snapshot.child(postkey).getChildrenCount();
-                        txtfavori.setText(likecount+" likes");
+                    } else {
+                        int likecount = (int) snapshot.child(postkey).getChildrenCount();
+                        txtfavori.setText(likecount + " likes");
                         begeniResmi.setImageResource(R.mipmap.ic_begeni);
                     }
                 }
@@ -173,8 +173,6 @@ public class GonderilenKitapAdapter extends RecyclerView.Adapter<GonderilenKitap
                 }
             });
         }
-
-
 
 
     }

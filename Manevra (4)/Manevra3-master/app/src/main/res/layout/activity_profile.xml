@@ -25,52 +25,64 @@
             android:layout_marginBottom="10dp"
             android:src="@mipmap/ic_kullanici_round" />
 
-        <TextView
-            android:id="@+id/tv_change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Fotoğraf Yükle"
-            android:textColor="@color/purple_500"
-            android:textSize="18sp" />
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/mailEdit"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
-            android:hint="Kullanıcı adı"
-            app:met_floatingLabel="normal" />
+            android:outlineAmbientShadowColor="@color/purple_500"
+            android:outlineSpotShadowColor="@color/brown"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/passwordEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:hint="Email"
-            app:met_floatingLabel="normal" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:padding="5dp"
+                    android:text="Kullanıcı adı"
+                    android:textColor="@color/purple_500"
+                    app:met_floatingLabel="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@color/purple_500" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <GridLayout
-            android:columnOrderPreserved="false"
-            android:alignmentMode="alignMargins"
-            android:layout_marginTop="5dp"
-            android:rowCount="1"
-            android:columnCount="2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="1">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:elevation="60dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:elevation="60dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -83,8 +95,8 @@
                         android:id="@+id/editBtnn"
                         android:layout_width="60dp"
                         android:layout_height="80dp"
-                        android:clickable="true"
                         android:layout_gravity="center"
+                        android:clickable="true"
                         android:src="@drawable/ic" />
 
                     <TextView
@@ -103,31 +115,33 @@
                 android:id="@+id/card2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:elevation="60dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:elevation="60dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
                     android:layout_gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
                     <ImageView
                         android:id="@+id/editfavori"
                         android:layout_width="60dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_baseline_favorite_24"/>
+                        android:src="@drawable/ic_baseline_favorite_24" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/purple_500"
                         android:text="Favoriler"
-                        android:textSize="20sp"/>
+                        android:textColor="@color/purple_500"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
@@ -137,30 +151,32 @@
                 android:id="@+id/car2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:elevation="60dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:elevation="60dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
                     android:layout_gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
                     <ImageView
                         android:id="@+id/edittodo"
                         android:layout_width="60dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_baseline_playlist_add_check_24"/>
+                        android:src="@drawable/ic_baseline_playlist_add_check_24" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/purple_500"
                         android:text="To Do List"
-                        android:textSize="20sp"/>
+                        android:textColor="@color/purple_500"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
@@ -170,24 +186,25 @@
                 android:id="@+id/ard2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:elevation="60dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:elevation="60dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
                     android:layout_gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
                     <ImageView
                         android:id="@+id/editexit"
                         android:layout_width="60dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_baseline_exit_to_app_24"/>
+                        android:src="@drawable/ic_baseline_exit_to_app_24" />
 
                     <TextView
                         android:layout_width="wrap_content"

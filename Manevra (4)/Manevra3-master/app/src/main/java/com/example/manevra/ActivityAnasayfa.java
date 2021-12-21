@@ -12,9 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -41,6 +47,8 @@ public class ActivityAnasayfa extends AppCompatActivity {
     FloatingActionButton btn;
     DrawerLayout cekmece;
     FirebaseDatabase database;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser = null;
     private DatabaseReference kitapYukleRef, likereference;
     private ValueEventListener kitapYukleRefListener;
     private DatabaseReference dbref;
@@ -49,7 +57,8 @@ public class ActivityAnasayfa extends AppCompatActivity {
     private RecyclerView recyclerView;
     GonderilenKitapAdapter recyclerAdapter;
     List<GonderilenKitap> liste = new ArrayList<>();
-
+    private ImageView btnSearch;
+    private EditText searchText;
     int intentCount = 0;
 
     @Override
@@ -58,16 +67,11 @@ public class ActivityAnasayfa extends AppCompatActivity {
         setContentView(R.layout.activity_anasayfa2);
         database = FirebaseDatabase.getInstance();
         cekmece = findViewById(R.id.cekmece_arkaplan);
-        Button btnSearch = (Button) findViewById(R.id.btnsearch);
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ActivityAnasayfa.this, ActivityKronometre.class);
-                startActivity(intent);
-            }
-        });
+        btnSearch = findViewById(R.id.btnsearch);
+        searchText = findViewById(R.id.searchbox);
         likereference = FirebaseDatabase.getInstance().getReference("likes");
-
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
         btn = (FloatingActionButton) findViewById(R.id.ekleme);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +88,15 @@ public class ActivityAnasayfa extends AppCompatActivity {
         layoutManager.scrollToPosition(0);
         recyclerView.setLayoutManager(layoutManager);
         getUserData();
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                searchText.requestFocus();
+                searchText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 0f, 0f, 0));
+                searchText.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 0f, 0f, 0));
+            }
+        });
 
     }
 
@@ -138,6 +151,39 @@ public class ActivityAnasayfa extends AppCompatActivity {
                     startActivity(intent);
                     intentCount++;
                 }
+            }
+        });
+        searchText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String searchedVal = s.toString().toLowerCase();
+                List<GonderilenKitap> listeSearch = new ArrayList<>();
+                listeSearch.clear();
+                if (TextUtils.isEmpty(searchedVal)) {
+                    recyclerAdapter.setCacheMenuRes(liste);
+                } else {
+                    for (GonderilenKitap c : liste) {
+                        if (c.getKitapAdi().toLowerCase().contains(searchedVal)
+                                || c.getKitapHakkinda().toLowerCase().contains(searchedVal)
+                                || c.getKitapYazari().toLowerCase().contains(searchedVal)
+                                || c.getEkleyenKullanici().toLowerCase().contains(searchedVal)) {
+                            listeSearch.add(c);
+                        }
+                    }
+                    recyclerAdapter.setCacheMenuRes(listeSearch);
+
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }
@@ -199,6 +245,7 @@ public class ActivityAnasayfa extends AppCompatActivity {
         uyariPenceresi.setPositiveButton("EVET", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                mAuth.signOut();
                 finishAffinity();
                 Intent intent = new Intent(ActivityAnasayfa.this, ActivityMain.class);
                 startActivity(intent);
