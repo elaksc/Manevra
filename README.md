@@ -8,5 +8,5 @@ Bu uygulama dönem projesi olarak geliştirilmiştir. Uygulama içerisinde kulla
  
 - Proje tamamen Android Studio üzerinde geliştirildi.
 - Geliştirme dili olarak Java dili kullanıldı.
-- Veritabanı için firebae kullanıldı. 
+- Veritabanı için firebae kullanıldı.
 
